@@ -9,7 +9,38 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
+
+
 <style>
+
+.page-header {
+  color: #537B9F;
+  font-family: 'Alfa Slab One', cursive;
+
+
+}
+
+a {
+  color: #537B9F;
+  font-family: 'Alfa Slab One', cursive;
+
+}
+
+h2 {
+  color: #5F6C77;
+}
+
+h3 {
+  color: #5F6C77;
+}
+
+h4 {
+  color: #5F6C77;
+}
+
+
 
     .description {
       display: none;
@@ -30,9 +61,41 @@
       }
 
 
-       .pagination {
-        font-size: 150%;
+.pagination {
+        font-size: 120%;
         }
+
+
+.wrapper {
+  wrapper
+  background-color: #B89C90;
+  font-family: 'Amatic SC', cursive;
+
+}
+#lightbox {
+  position:fixed; /* keeps the lightbox window in the current viewport */
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:url(overlay.png) repeat;
+  text-align:center;
+}
+#lightbox p {
+  text-align:right;
+  color:#fff;
+  margin-right:20px;
+  font-size:12px;
+}
+#lightbox img {
+  box-shadow:0 0 25px #111;
+  -webkit-box-shadow:0 0 25px #111;
+  -moz-box-shadow:0 0 25px #111;
+  max-width:940px;
+  margin:200px
+
+}
+
 
 </style>
 
@@ -53,7 +116,7 @@
 
 </head>
 
-<body>
+<body class="wrapper">
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -106,7 +169,7 @@
         <div class="row text-center">
             <div class="col-lg-12">
                 <ul class="pagination">
-                    <li id="sandwiches">
+                    <li id="sandwiches" class="active">
                         <a id="sandwiches">Sandwiches</a>
                     </li>
                     <li id="snacks">
@@ -125,8 +188,8 @@
         <!-- Projects Row -->
         <div class="row" id="sandwiches">
             <div class="col-md-4 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="images/sandwich-1.jpg" alt="">
+                <a href="images/sandwich-1.jpg" class="lightbox_trigger">
+                    <img class="img-responsive" class="lightbox_trigger" src="images/sandwich-1.jpg" alt="">
                 </a>
                 <h3>
                     <a href="#">Humus</a>
@@ -134,8 +197,8 @@
                 <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
             </div>
             <div class="col-md-4 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="images/sandwich-2.jpg" alt="">
+                <a href="images/sandwich-2.jpg" class="lightbox_trigger">
+                    <img class="img-responsive" class="lightbox_trigger" src="images/sandwich-2.jpg" alt="">
                 </a>
                 <h3>
                     <a href="#">Mozzerella</a>
@@ -143,8 +206,8 @@
                 <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
             </div>
             <div class="col-md-4 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="images/sandwich-3.jpg" alt="">
+                <a href="images/sandwich-3.jpg" class="lightbox_trigger">
+                    <img class="img-responsive" class="lightbox_trigger" src="images/sandwich-3.jpg" alt="">
                 </a>
                 <h3>
                     <a href="#">Pulled pork</a>
@@ -157,8 +220,8 @@
         <!-- Projects Row -->
         <div class="row" id="sandwiches">
             <div class="col-md-4 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="images/sandwich-4.jpg" alt="">
+                <a href="images/sandwich-4.jpg" class="lightbox_trigger">
+                    <img class="img-responsive" class="lightbox_trigger" src="images/sandwich-4.jpg" alt="">
                 </a>
                 <h3>
                     <a href="#">Croissant</a>
@@ -166,8 +229,8 @@
                 <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
             </div>
             <div class="col-md-4 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="images/sandwich-5.jpg" alt="">
+                <a href="images/sandwich-5.jpg" class="lightbox_trigger">
+                    <img class="img-responsive" class="lightbox_trigger" src="images/sandwich-5.jpg" alt="">
                 </a>
                 <h3>
                     <a href="#">Club sandwich - €3.50</a>
@@ -175,8 +238,8 @@
                 <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
             </div>
             <div class="col-md-4 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="images/sandwich-6.jpg" alt="">
+                <a href="images/sandwich-6.jpg" class="lightbox_trigger">
+                    <img class="img-responsive" class="lightbox_trigger" src="images/sandwich-6.jpg" alt="">
                 </a>
                 <h3>
                     <a href="#">Toasted sandwich - €3</a>
@@ -197,7 +260,7 @@
             </div>
             <div class="col-md-4 portfolio-item">
                 <a href="#">
-                    <img class="img-responsive" src="images/coffee-2.png" alt="">
+                    <img id="light"class="img-responsive" src="images/coffee-2.png" alt="">
                 </a>
                 <h3>
                     <a href="#">Cappuccino</a>
@@ -322,7 +385,9 @@ $(document).ready(function(){
         $('div#snacks').hide();
         $('div#coffees').hide();
         $('div#cold-drinks').hide();
-        $('div#sandwiches').show();
+        $('div#sandwiches').animate({
+            height: 'toggle'
+        });
 
          $('li#snacks').removeClass("active");
          $('li#coffees').removeClass("active");
@@ -334,7 +399,9 @@ $(document).ready(function(){
         $('div#sandwiches').hide();
         $('div#coffees').hide();
         $('div#cold-drinks').hide();
-        $('div#snacks').show();
+        $('div#snacks').animate({
+            height: 'toggle'
+        });
 
 
          $('li#sandwiches').removeClass("active");
@@ -348,8 +415,9 @@ $(document).ready(function(){
         $('div#snacks').hide();
         $('div#sandwiches').hide();
         $('div#cold-drinks').hide();
-        $('div#coffees').show();
-
+        $('div#coffees').animate({
+            height: 'toggle'
+        });
 
          $('li#snacks').removeClass("active");
          $('li#sandwiches').removeClass("active");
@@ -362,7 +430,9 @@ $(document).ready(function(){
         $('div#snacks').hide();
         $('div#coffees').hide();
         $('div#sandwiches').hide();
-        $('div#cold-drinks').show();
+        $('div#cold-drinks').animate({
+            height: 'toggle'
+        });
 
          $('li#snacks').removeClass("active");
          $('li#coffees').removeClass("active");
@@ -371,6 +441,54 @@ $(document).ready(function(){
       });
 
   });
+
+  $('.lightbox_trigger').click(function(e) {
+
+		//prevent default action (hyperlink)
+		e.preventDefault();
+
+		//Get clicked link href
+		var image_href = $(this).attr("href");
+
+		/*
+		If the lightbox window HTML already exists in document,
+		change the img src to to match the href of whatever link was clicked
+
+		If the lightbox window HTML doesn't exists, create it and insert it.
+		(This will only happen the first time around)
+		*/
+
+		if ($('#lightbox').length > 0) { // #lightbox exists
+
+			//place href as img src value
+			$('#content').html('<img src="' + image_href + '" />');
+
+			//show lightbox window - you could use .show('fast') for a transition
+			$('#lightbox').show();
+		}
+
+		else { //#lightbox does not exist - create and insert (runs 1st time only)
+
+			//create HTML markup for lightbox window
+			var lightbox =
+			'<div id="lightbox">' +
+				'<p>Click to close</p>' +
+				'<div id="content">' + //insert clicked link's href into img src
+					'<img src="' + image_href +'" />' +
+				'</div>' +
+			'</div>';
+
+			//insert lightbox HTML into page
+			$('body').append(lightbox);
+		}
+
+	});
+
+
+	//Click anywhere on the page to get rid of lightbox window
+	$('#lightbox').live('click', function() { //must use live, as the lightbox element is inserted into the DOM
+		$('#lightbox').hide();
+	});
 
 
 
