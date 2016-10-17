@@ -67,11 +67,12 @@ h4 {
 
 
 .wrapper {
-  wrapper
   background-color: #B89C90;
   font-family: 'Amatic SC', cursive;
 
 }
+
+
 #lightbox {
   position:fixed; /* keeps the lightbox window in the current viewport */
   top:0;
@@ -84,7 +85,8 @@ h4 {
 #lightbox p {
   text-align:right;
   color:#fff;
-  margin-right:20px;
+  margin-right:40px;
+  margin-top:80px;
   font-size:12px;
 }
 #lightbox img {
@@ -92,8 +94,13 @@ h4 {
   -webkit-box-shadow:0 0 25px #111;
   -moz-box-shadow:0 0 25px #111;
   max-width:940px;
-  margin:200px
+  margin:150px
 
+}
+
+p .close-box {
+  margin-top:100px;
+  font-size:12px;
 }
 
 
@@ -121,7 +128,6 @@ h4 {
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
@@ -131,7 +137,6 @@ h4 {
                 </button>
                 <a class="navbar-brand" href="#">Start Bootstrap</a>
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
@@ -145,9 +150,7 @@ h4 {
                     </li>
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container -->
     </nav>
 
     <!-- Page Content -->
@@ -156,7 +159,7 @@ h4 {
         <!-- Page Header -->
 
 <hr>
-        <div class="row">
+        <div class="row" class="wrapper">
             <div class="col-lg-12">
               <br>
                 <h1 class="page-header">Menu
@@ -189,7 +192,7 @@ h4 {
         <div class="row" id="sandwiches">
             <div class="col-md-4 portfolio-item">
                 <a href="images/sandwich-1.jpg" class="lightbox_trigger">
-                    <img class="img-responsive" class="lightbox_trigger" src="images/sandwich-1.jpg" alt="">
+                    <img class="img-responsive" src="images/sandwich-1.jpg" alt="">
                 </a>
                 <h3>
                     <a href="#">Humus</a>
@@ -198,7 +201,7 @@ h4 {
             </div>
             <div class="col-md-4 portfolio-item">
                 <a href="images/sandwich-2.jpg" class="lightbox_trigger">
-                    <img class="img-responsive" class="lightbox_trigger" src="images/sandwich-2.jpg" alt="">
+                    <img class="img-responsive" src="images/sandwich-2.jpg" alt="">
                 </a>
                 <h3>
                     <a href="#">Mozzerella</a>
@@ -207,7 +210,7 @@ h4 {
             </div>
             <div class="col-md-4 portfolio-item">
                 <a href="images/sandwich-3.jpg" class="lightbox_trigger">
-                    <img class="img-responsive" class="lightbox_trigger" src="images/sandwich-3.jpg" alt="">
+                    <img class="img-responsive" src="images/sandwich-3.jpg" alt="">
                 </a>
                 <h3>
                     <a href="#">Pulled pork</a>
@@ -221,7 +224,7 @@ h4 {
         <div class="row" id="sandwiches">
             <div class="col-md-4 portfolio-item">
                 <a href="images/sandwich-4.jpg" class="lightbox_trigger">
-                    <img class="img-responsive" class="lightbox_trigger" src="images/sandwich-4.jpg" alt="">
+                    <img class="img-responsive" src="images/sandwich-4.jpg" alt="">
                 </a>
                 <h3>
                     <a href="#">Croissant</a>
@@ -230,7 +233,7 @@ h4 {
             </div>
             <div class="col-md-4 portfolio-item">
                 <a href="images/sandwich-5.jpg" class="lightbox_trigger">
-                    <img class="img-responsive" class="lightbox_trigger" src="images/sandwich-5.jpg" alt="">
+                    <img class="img-responsive" src="images/sandwich-5.jpg" alt="">
                 </a>
                 <h3>
                     <a href="#">Club sandwich - €3.50</a>
@@ -239,7 +242,7 @@ h4 {
             </div>
             <div class="col-md-4 portfolio-item">
                 <a href="images/sandwich-6.jpg" class="lightbox_trigger">
-                    <img class="img-responsive" class="lightbox_trigger" src="images/sandwich-6.jpg" alt="">
+                    <img class="img-responsive" src="images/sandwich-6.jpg" alt="">
                 </a>
                 <h3>
                     <a href="#">Toasted sandwich - €3</a>
@@ -381,6 +384,69 @@ h4 {
 // toggle nav
 $(document).ready(function(){
 
+  $('#lightbox').click(function() {
+
+    $('#lightbox').hide();
+
+  });
+
+  $('.lightbox_trigger').click(function(e) {
+
+    //prevent default action (hyperlink)
+    e.preventDefault();
+
+    //Get clicked link href
+    var image_href = $(this).attr("href");
+
+    /*
+    If the lightbox window HTML already exists in document,
+    change the img src to to match the href of whatever link was clicked
+
+    If the lightbox window HTML doesn't exists, create it and insert it.
+    (This will only happen the first time around)
+    */
+
+
+    if ($('#lightbox').length > 0) { // #lightbox exists
+
+      //place href as img src value
+      $('#content').html('<img src="' + image_href + '" />');
+
+      //show lightbox window - you could use .show('fast') for a transition
+      $('#lightbox').show('fast');
+    }
+
+    else { //#lightbox does not exist - create and insert (runs 1st time only)
+
+      //create HTML markup for lightbox window
+      var lightbox =
+      '<div id="lightbox">' +
+        '<p> <a class="close-box">Click to hhhh</a></p>' +
+        '<div id="content">' + //insert clicked link's href into img src
+          '<img src="' + image_href +'" />' +
+        '</div>' +
+      '</div>';
+
+      //insert lightbox HTML into page
+      $('body').append(lightbox);
+    }
+
+  });
+
+
+  //Click anywhere on the page to get rid of lightbox window
+  // $('body').live('click', function() { //must use live, as the lightbox element is inserted into the DOM
+  // 	$('#lightbox').hide();
+  // });
+
+
+
+
+
+
+
+
+
       $("li#sandwiches").click(function(){
         $('div#snacks').hide();
         $('div#coffees').hide();
@@ -441,58 +507,6 @@ $(document).ready(function(){
       });
 
   });
-
-  $('.lightbox_trigger').click(function(e) {
-
-		//prevent default action (hyperlink)
-		e.preventDefault();
-
-		//Get clicked link href
-		var image_href = $(this).attr("href");
-
-		/*
-		If the lightbox window HTML already exists in document,
-		change the img src to to match the href of whatever link was clicked
-
-		If the lightbox window HTML doesn't exists, create it and insert it.
-		(This will only happen the first time around)
-		*/
-
-		if ($('#lightbox').length > 0) { // #lightbox exists
-
-			//place href as img src value
-			$('#content').html('<img src="' + image_href + '" />');
-
-			//show lightbox window - you could use .show('fast') for a transition
-			$('#lightbox').show();
-		}
-
-		else { //#lightbox does not exist - create and insert (runs 1st time only)
-
-			//create HTML markup for lightbox window
-			var lightbox =
-			'<div id="lightbox">' +
-				'<p>Click to close</p>' +
-				'<div id="content">' + //insert clicked link's href into img src
-					'<img src="' + image_href +'" />' +
-				'</div>' +
-			'</div>';
-
-			//insert lightbox HTML into page
-			$('body').append(lightbox);
-		}
-
-	});
-
-
-	//Click anywhere on the page to get rid of lightbox window
-	$('#lightbox').live('click', function() { //must use live, as the lightbox element is inserted into the DOM
-		$('#lightbox').hide();
-	});
-
-
-
-
 
 
 </script>
