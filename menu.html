@@ -9,24 +9,102 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <style>
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
+
+
+<style>
+
+.page-header {
+  color: #537B9F;
+  font-family: 'Alfa Slab One', cursive;
+
+
+}
+
+a {
+  color: #537B9F;
+  font-family: 'Alfa Slab One', cursive;
+
+}
+
+h2 {
+  color: #5F6C77;
+}
+
+h3 {
+  color: #5F6C77;
+}
+
+h4 {
+  color: #5F6C77;
+}
+
+
 
     .description {
-      /*display: none;*/
+      display: none;
+      color: blue;
+      }
+
+  div#coffees {
+      display: none;
+      color: blue;
+      }
+  div#snacks {
+      display: none;
+      color: blue;
+      }
+  div#cold-drinks {
+      display: none;
       color: blue;
       }
 
 
-
-
-      p .description:hover {
-        display: show;
+.pagination {
+        font-size: 120%;
         }
 
 
+.wrapper {
+  background-color: #B89C90;
+  font-family: 'Amatic SC', cursive;
+
+}
 
 
-      </style>
+#lightbox {
+  position:fixed; /* keeps the lightbox window in the current viewport */
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:url(overlay.png) repeat;
+  text-align:center;
+}
+#lightbox p {
+  text-align:right;
+  color:#fff;
+  margin-right:40px;
+  margin-top:80px;
+  font-size:12px;
+}
+#lightbox img {
+  box-shadow:0 0 25px #111;
+  -webkit-box-shadow:0 0 25px #111;
+  -moz-box-shadow:0 0 25px #111;
+  max-width:940px;
+  margin:150px
+
+}
+
+p .close-box {
+  margin-top:100px;
+  font-size:12px;
+}
+
+
+</style>
 
     <title>Menu</title>
 
@@ -45,7 +123,8 @@
 
 </head>
 
-<body>
+
+<body class="wrapper">
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -74,9 +153,7 @@
                     </li>
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container -->
     </nav>
 
     <!-- Page Content -->
@@ -85,7 +162,7 @@
         <!-- Page Header -->
 
 <hr>
-        <div class="row">
+        <div class="row" class="wrapper">
             <div class="col-lg-12">
               <br>
                 <h1 class="page-header">Menu
@@ -98,49 +175,48 @@
         <div class="row text-center">
             <div class="col-lg-12">
                 <ul class="pagination">
-                    <li class="active">
-                        <a href="#">Sandwiches</a>
+                    <li id="sandwiches" class="active">
+                        <a id="sandwiches">Sandwiches</a>
                     </li>
-                    <li>
-                        <a href="#">Snacks</a>
+                    <li id="snacks">
+                        <a id="snacks">Snacks</a>
                     </li>
-                    <li>
-                        <a href="#">Coffee</a>
+                    <li id="coffees">
+                        <a id="coffees">Coffee</a>
                     </li>
-                    <li>
-                        <a href="#">Cold drinks</a>
+                    <li id="cold-drinks">
+                        <a id="cold-drinks">Cold drinks</a>
                     </li>
                 </ul>
             </div>
         </div>
 
         <!-- Projects Row -->
-        <div class="row">
+        <div class="row" id="sandwiches">
             <div class="col-md-4 portfolio-item">
-                <a href="#">
+                <a href="images/sandwich-1.jpg" class="lightbox_trigger">
                     <img class="img-responsive" src="images/sandwich-1.jpg" alt="">
                 </a>
-                <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-
                 <h3>
-                    <a href="#">Project Name</a>
+                    <a href="#">Humus</a>
                 </h3>
+                <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
             </div>
             <div class="col-md-4 portfolio-item">
-                <a href="#">
+                <a href="images/sandwich-2.jpg" class="lightbox_trigger">
                     <img class="img-responsive" src="images/sandwich-2.jpg" alt="">
                 </a>
-                <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
                 <h3>
-                    <a href="#">Project Name</a>
+                    <a href="#">Mozzerella</a>
                 </h3>
+                <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
             </div>
             <div class="col-md-4 portfolio-item">
-                <a href="#">
+                <a href="images/sandwich-3.jpg" class="lightbox_trigger">
                     <img class="img-responsive" src="images/sandwich-3.jpg" alt="">
                 </a>
                 <h3>
-                    <a href="#">Project Name</a>
+                    <a href="#">Pulled pork</a>
                 </h3>
                 <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
             </div>
@@ -148,13 +224,13 @@
         <!-- /.row -->
 
         <!-- Projects Row -->
-        <div class="row">
+        <div class="row" id="sandwiches">
             <div class="col-md-4 portfolio-item">
-                <a href="#">
+                <a href="images/sandwich-4.jpg" class="lightbox_trigger">
                     <img class="img-responsive" src="images/sandwich-4.jpg" alt="">
                 </a>
                 <h3>
-                    <a href="#">Project Name</a>
+                    <a href="#">Croissant</a>
                 </h3>
                 <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
             </div>
@@ -164,6 +240,11 @@
                 </a>
                 <h3>
                     <a href="#">Project Name</a>
+                <a href="images/sandwich-5.jpg" class="lightbox_trigger">
+                    <img class="img-responsive" src="images/sandwich-5.jpg" alt="">
+                </a>
+                <h3>
+                    <a href="#">Club sandwich - €3.50</a>
                 </h3>
                 <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
             </div>
@@ -173,14 +254,111 @@
                 </a>
                 <h3>
                     <a href="#">Project Name</a>
+                <a href="images/sandwich-6.jpg" class="lightbox_trigger">
+                    <img class="img-responsive" src="images/sandwich-6.jpg" alt="">
+                </a>
+                <h3>
+                    <a href="#">Toasted sandwich - €3</a>
                 </h3>
                 <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
             </div>
         </div>
 
-        <!-- Projects Row -->
+        <div class="row" id="coffees">
+            <div class="col-md-4 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="images/coffee-1.png" alt="">
+                </a>
+                <h3>
+                    <a href="#">Americano</a>
+                </h3>
+            </div>
+            <div class="col-md-4 portfolio-item">
+                <a href="#">
+                    <img id="light"class="img-responsive" src="images/coffee-2.png" alt="">
+                </a>
+                <h3>
+                    <a href="#">Cappuccino</a>
+                </h3>
+            </div>
+            <div class="col-md-4 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="images/coffee-3.png" alt="">
+                </a>
+                <h3>
+                    <a href="#">Latte</a>
+                </h3>
+            </div>
+        </div>
         <!-- /.row -->
 
+        <!-- Projects Row -->
+        <div class="row" id="coffees">
+            <div class="col-md-4 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="images/coffee-4.png" alt="">
+                </a>
+                <h3>
+                    <a href="#">Espresso</a>
+                </h3>
+            </div>
+            <div class="col-md-4 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="images/coffee-5.png" alt="">
+                </a>
+                <h3>
+                    <a href="#">Flat white</a>
+                </h3>
+            </div>
+            <div class="col-md-4 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="images/coffee-6.png" alt="">
+                </a>
+                <h3>
+                    <a href="#">Machiato</a>
+                </h3>
+            </div>
+        </div>
+
+
+
+        <div class="row" id="snacks">
+            <div class="col-md-4 portfolio-item">
+              <h3>
+                  <a href="#">Cake - €1.20</a>
+              </h3>
+            </div>
+            <div class="col-md-4 portfolio-item">
+                <h3>
+                    <a href="#">Crisps - €0.50</a>
+                </h3>
+            </div>
+            <div class="col-md-4 portfolio-item">
+                <h3>
+                  <a href="#">Chocolate - €0.70</a>
+                </h3>
+            </div>
+        </div>
+
+        <div class="row" id="cold-drinks">
+            <div class="col-md-4 portfolio-item">
+              <h3>
+                  <a href="#">Cola - €1.20</a>
+              </h3>
+            </div>
+            <div class="col-md-4 portfolio-item">
+                <h3>
+                    <a href="#">Water - €0.70</a>
+                </h3>
+            </div>
+            <div class="col-md-4 portfolio-item">
+                <h3>
+                  <a href="#">Juice - €1.50</a>
+                </h3>
+            </div>
+        </div>
+
+        <!-- /.row -->
         <hr>
 
         <!-- Pagination -->
@@ -210,4 +388,135 @@
 
 </body>
 
+<script>
+
+// toggle nav
+$(document).ready(function(){
+
+  $('#lightbox').click(function() {
+
+    $('#lightbox').hide();
+
+  });
+
+  $('.lightbox_trigger').click(function(e) {
+
+    //prevent default action (hyperlink)
+    e.preventDefault();
+
+    //Get clicked link href
+    var image_href = $(this).attr("href");
+
+    /*
+    If the lightbox window HTML already exists in document,
+    change the img src to to match the href of whatever link was clicked
+
+    If the lightbox window HTML doesn't exists, create it and insert it.
+    (This will only happen the first time around)
+    */
+
+
+    if ($('#lightbox').length > 0) { // #lightbox exists
+
+      //place href as img src value
+      $('#content').html('<img src="' + image_href + '" />');
+
+      //show lightbox window - you could use .show('fast') for a transition
+      $('#lightbox').show('fast');
+    }
+
+    else { //#lightbox does not exist - create and insert (runs 1st time only)
+
+      //create HTML markup for lightbox window
+      var lightbox =
+      '<div id="lightbox">' +
+        '<p> <a class="close-box">Click to hhhh</a></p>' +
+        '<div id="content">' + //insert clicked link's href into img src
+          '<img src="' + image_href +'" />' +
+        '</div>' +
+      '</div>';
+
+      //insert lightbox HTML into page
+      $('body').append(lightbox);
+    }
+
+  });
+
+
+  //Click anywhere on the page to get rid of lightbox window
+  // $('body').live('click', function() { //must use live, as the lightbox element is inserted into the DOM
+  // 	$('#lightbox').hide();
+  // });
+
+
+
+
+
+
+
+
+
+      $("li#sandwiches").click(function(){
+        $('div#snacks').hide();
+        $('div#coffees').hide();
+        $('div#cold-drinks').hide();
+        $('div#sandwiches').animate({
+            height: 'toggle'
+        });
+
+         $('li#snacks').removeClass("active");
+         $('li#coffees').removeClass("active");
+         $('li#cold-drinks').removeClass("active");
+         $('li#sandwiches').addClass("active");
+      });
+
+      $("li#snacks").click(function(){
+        $('div#sandwiches').hide();
+        $('div#coffees').hide();
+        $('div#cold-drinks').hide();
+        $('div#snacks').animate({
+            height: 'toggle'
+        });
+
+
+         $('li#sandwiches').removeClass("active");
+         $('li#coffees').removeClass("active");
+         $('li#cold-drinks').removeClass("active");
+         $('li#snacks').addClass("active");
+      });
+
+
+      $("li#coffees").click(function(){
+        $('div#snacks').hide();
+        $('div#sandwiches').hide();
+        $('div#cold-drinks').hide();
+        $('div#coffees').animate({
+            height: 'toggle'
+        });
+
+         $('li#snacks').removeClass("active");
+         $('li#sandwiches').removeClass("active");
+         $('li#cold-drinks').removeClass("active");
+         $('li#coffees').addClass("active");
+      });
+
+
+      $("li#cold-drinks").click(function(){
+        $('div#snacks').hide();
+        $('div#coffees').hide();
+        $('div#sandwiches').hide();
+        $('div#cold-drinks').animate({
+            height: 'toggle'
+        });
+
+         $('li#snacks').removeClass("active");
+         $('li#coffees').removeClass("active");
+         $('li#sandwiches').removeClass("active");
+         $('li#cold-drinks').addClass("active");
+      });
+
+  });
+
+
+</script>
 </html>
